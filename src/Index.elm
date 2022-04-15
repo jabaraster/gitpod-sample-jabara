@@ -3,6 +3,7 @@ module Index exposing (main)
 import Browser
 import Html exposing (Html, button, div, text)
 import Html.Events exposing (onClick)
+import Html.Attributes exposing (..)
 
 main =
   Browser.sandbox { init = init, update = update, view = view }
@@ -33,7 +34,7 @@ update msg model =
 view : Model -> Html Msg
 view model =
   div []
-    [ button [ onClick Decrement ] [ text "-" ]
+    [ button [ onClick Decrement, class "waves-effect waves-light btn"] [ text "-" ]
     , div [] [ text (String.fromInt model) ]
-    , button [ onClick Increment ] [ text "+" ]
+    , button [ onClick Increment, class "waves-effect waves-light btn" ] [ text "+" ]
     ]
